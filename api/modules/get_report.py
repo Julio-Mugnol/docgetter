@@ -11,12 +11,12 @@ from typing import Union
 load_dotenv() 
 warnings.simplefilter(action='ignore', category=UnicodeWarning)
 
-# slack ID of RP in charge -- currently Esfandiar
-RP_ID = '<@U01KCEYLA85>'
+# slack ID of RP in charge -- currently Julio
+RP_ID = '<@U098U6TNLBF>'
 
 # ssh into mercury using paramiko
 host = 'mercury.chicagobooth.edu'
-username = 'erouhani'
+username = 'jcbmugnol'
 # increasing paramiko speed
 class FastTransport(pk.Transport):
     def __init__(self, sock):
@@ -26,7 +26,7 @@ class FastTransport(pk.Transport):
         self.packetizer.REKEY_PACKETS = pow(2, 40)
 
 ## add .env file to main folder that contains your mercury sshkey
-key = pk.RSAKey.from_private_key(StringIO(str(os.environ.get("MERCURY_KEY"))))
+key = pk.ECDSAKey.from_private_key(StringIO(str(os.environ.get("MERCURY_KEY"))))
 
 # dataset of all reports with column set up to download from mercury directory structure
 DF = pd.read_csv('./trans_ref.csv', compression='gzip', low_memory=False)
