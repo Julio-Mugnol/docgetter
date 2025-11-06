@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: slack-doc-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SLACK_TOKEN
+        sync: false
+      - key: SIGNING_SECRET
+        sync: false
+      - key: MERCURY_KEY
