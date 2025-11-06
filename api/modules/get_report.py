@@ -214,11 +214,14 @@ def handle_download(
     print(f'Logging into mercury to get {directory}/{filename}\n')
 
     # set up connection via fast transport
-    ssh_conn = pk.Transport((host, 22))
+    ssh_conn = FastTransport((host, 22))
+    print('1')
     ssh_conn.connect(username=username, pkey=key)
+    print('2')
     
     # open mercury connection
     sftp = pk.SFTPClient.from_transport(ssh_conn)
+    print('3')
 
     # exit if sftp not established
     if not sftp:
