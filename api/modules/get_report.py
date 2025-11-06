@@ -141,7 +141,7 @@ def getreport(report: int,
     """
 
     st_time = time.time()
-    print('handle_download call')
+    
     # download file
     filename_new = handle_download(directory=directory, filename=filename, local_dir=local_dir, transcript_source=transcript_source, st_time=st_time)
 

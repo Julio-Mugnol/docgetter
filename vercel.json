@@ -5,7 +5,7 @@
       "maxDuration": 60
     },
     "api/modules/get_report.py": {
-      "maxDuration": 60
+      "maxDuration": 180
     }
   }
 }
