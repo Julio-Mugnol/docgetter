@@ -1,8 +1,10 @@
 slack-sdk==3.27.1
 flask[async]==3.0.3
 python-dotenv==1.0.0
-pandas==2.2.1
+pandas==2.1.4
+numpy==1.26.4
 paramiko==3.4.0
 pypdf==3.17.1
 fpdf==1.7.2
-gunicorn
+gunicorn==21.2.0
+cryptography>=41.0.0
